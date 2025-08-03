@@ -7,7 +7,7 @@ const User = ({user_profile_url = null, username = null}) => {
     }
     return (
         <div className="w-[2rem] h-[2rem] rounded-[5px] border-2 border-gray-400">
-            <img src={user_profile_url} className="w-full h-full" />
+            <img src={user_profile_url} className="w-full h-full" alt="user" />
         </div>
     )
 }

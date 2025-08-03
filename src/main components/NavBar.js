@@ -1,5 +1,4 @@
 import AppLogo from "./AppLogo"
-import User from "./User"
 import GithubButton from "./GithubButton"
 function NavBar(){
 

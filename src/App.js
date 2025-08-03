@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './main components/NavBar';
 import LandingPageMain from './apps/landing page/LandingPageMain';
