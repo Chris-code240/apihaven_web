@@ -8,7 +8,7 @@ function LandingPageMain(){
                     </div>
                     <div className="space-y-3 px-6 md:px-auto">
                         <h2 className="md:text-6xl text-[32px] font-bold text-start md:text-center">Ship Faster with No-Code RESTful API</h2>
-                        <p className="text-[#00000060] text-start md:text-justify">Trusted by developers, developed around developer needs, architectured to ease development process</p>
+                        <p className="text-[#00000060] text-start md:text-center">Trusted by developers, developed around developer needs, architectured to ease development process</p>
                     </div>
                     <div className="space-x-3 font-medium">
                         <button className="md:w-[10rem] md:h-[4rem] w-[7rem] h-[3rem] rounded-full bg-black text-white">
