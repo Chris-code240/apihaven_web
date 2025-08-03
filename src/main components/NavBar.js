@@ -1,7 +1,7 @@
 import AppLogo from "./AppLogo"
 import User from "./User"
 import GithubButton from "./GithubButton"
-const NavBar =  ({}) =>{
+function NavBar(){
 
     return (
         <header>

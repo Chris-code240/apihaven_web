@@ -1,4 +1,4 @@
-function LandingPageMain({}){
+function LandingPageMain(){
 
         return (
             <main className="container mx-auto space-y-3 md:space-y-auto">
@@ -30,7 +30,7 @@ function LandingPageMain({}){
                                 <div className="absolute -right-6 -top-6 w-[100px] h-[100px] bg-purple-300 rounded-full"></div>
                                 <div className="px-3 space-y-3">
                                     <div className="w-10 h-10">
-                                        <img src="/icons/thunderbolt-colored.svg" className="" />
+                                        <img src="/icons/thunderbolt-colored.svg" className="" alt="thunderbolt" />
                                     </div>
                                     <p className="font-semibold text-start">DRF Based API</p>
                                     <p className="text-[#00000060] text-start text-[16px]">
@@ -41,7 +41,7 @@ function LandingPageMain({}){
                                 <div className="absolute -right-6 -top-6 w-[100px] h-[100px] bg-[#000BE2] opacity-[15%] rounded-full"></div>
                                 <div className="px-3 space-y-3">
                                     <div className="w-10 h-10">
-                                        <img src="/icons/multi-apps-colored.svg" className="" />
+                                        <img src="/icons/multi-apps-colored.svg" className="" alt="multi apps" />
                                     </div>
                                     <p className="font-semibold text-start">Multi Tenancy</p>
                                     <p className="text-[#00000060] text-start text-[16px]">
@@ -52,7 +52,7 @@ function LandingPageMain({}){
                                 <div className="absolute -right-6 -top-6 w-[100px] h-[100px] bg-[#00FF73] opacity-[15%] rounded-full"></div>
                                 <div className="px-3 space-y-3">
                                     <div className="w-10 h-10">
-                                        <img src="/icons/open-source-colored.svg" className="opacity-[100%]" />
+                                        <img src="/icons/open-source-colored.svg" className="opacity-[100%]" alt="code" />
                                     </div>
                                     <p className="font-semibold text-start">DRF Based API</p>
                                     <p className="text-[#00000060] text-start text-[16px]">
@@ -69,13 +69,13 @@ function LandingPageMain({}){
                         <p className="text-start max-w-[392px]">
                             Focus on your product, not on reinventing API business logics. APIHaven is designed to be accessible, customizable, and work seamlessly with  your frontend.
                         </p>
-                        <img className="block md:hidden w-[480px]" src="/assets/code.png" />
+                        <img className="block md:hidden w-[480px]" src="/assets/code.png" alt="code snippet" />
 
                         <button className="self-center md:self-auto w-[10rem] h-[4rem] font-medium rounded-full bg-black text-white">
                             Start for Free
                         </button>
                     </div>
-                    <img className="w-[778px] hidden md:block" src="/assets/code.png" />
+                    <img className="w-[778px] hidden md:block" src="/assets/code.png" alt="code snippet" />
                 </article>
             </main>
         )

@@ -1,4 +1,4 @@
-const GithubButton = ({}) => {
+const GithubButton = () => {
 
     return (
         <button className="bg-black md:h-10 rounded-md text-white px-3 py-1 space-x-3">
