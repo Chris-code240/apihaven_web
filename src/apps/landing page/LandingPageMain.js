@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 function LandingPageMain(){
 
         return (
-            <main className="container mx-auto space-y-3 md:space-y-auto">
-                <article className="flex flex-col items-center justify-evenly md:h-screen h-[80vh] md:space-y-25">
+            <main className="container mx-auto space-y-6 md:space-y-0 mt-[10vh] md:mt-0">
+                <article className="flex flex-col items-center space-y-9 md:justify-evenly md:h-screen h-auto md:space-y-25">
                     <div className="self-center p-1 px-2 rounded-xl md:text-[18px] text-[12px] text-center md:text-auto bg-white shadow-md md:w-[40vw]">
                         <p>🎉 | Relaiable, Secure, User control RESTful API Development</p>
                     </div>
@@ -11,18 +13,20 @@ function LandingPageMain(){
                         <p className="text-[#00000060] text-start md:text-center">Trusted by developers, developed around developer needs, architectured to ease development process</p>
                     </div>
                     <div className="space-x-3 font-medium">
-                        <button className="md:w-[10rem] md:h-[4rem] w-[7rem] h-[3rem] rounded-full bg-black text-white">
-                            Start for Free
-                        </button>
+                        <Link to="dashboard">
+                            <button className="md:w-[10rem] md:h-[4rem] w-[7rem] h-[3rem] rounded-full bg-black text-white">
+                                Start for Free
+                            </button>
+                        </Link>
                         <button className="md:w-[10rem] w-[7rem] h-[3rem] md:h-[4rem] rounded-full bg-black bg-opacity-[5%] text-black">
                             Talk to us&rarr;
                         </button>
                     </div>
                 </article>
-                <article className="flex flex-col items-center md:space-y-[59px] space-y-[39px]">
+                <article className="flex flex-col items-center md:space-y-[59px] space-y-[39px] my-9 md:my-0">
                         <div className=" flex items-center justify-center bg-[#D9D9D9] bg-opacity-[30%] text-[16px] h-[37px] w-[211px] rounded-full font-medium"><p className="opacity-[100%]">why choose us?</p></div>
                         <h3 className="text-[48px] font-medium">Developer Centered</h3>
-                        <p className="max-w-[48rem] text-start text-[#00000060]  md:text-[32px] px-6 md-px-auto">This project is built for developers to ship faster. Leveraging Django Rest Framework, APIHaven 
+                        <p className="max-w-[48rem] text-start text-[#00000060]  md:text-[22px] px-6 md:px-0">This project is built for developers to ship faster. Leveraging Django Rest Framework, APIHaven 
                             ensures maximum security againts your data.
                         </p>
                         <div className="flex items-center flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0">
@@ -61,13 +65,13 @@ function LandingPageMain(){
                             </div>
                         </div>
                 </article>
-                <article className="md:flex items-center justify-between my-6 md:my-auto">
+                <article className="md:flex items-center justify-between">
                     <div className="flex flex-col md:justify-start justify-center space-y-[30px] max-w-[418px] px-6 md:px-auto">
-                        <div className="self-center md:self-auto flex items-center justify-center bg-[#FB00FF] text-[#B404B7] bg-opacity-[10%] text-[16px] h-[37px] w-[211px] rounded-full font-medium"><p className="opacity-[100%]">why choose us?</p></div>
+                        <div className="self-center md:self-auto flex items-center justify-center bg-[#FB00FF] text-[#B404B7] bg-opacity-[10%] text-[16px] h-[37px] w-[211px] rounded-full font-medium"><p className="opacity-[100%]">modern architecture</p></div>
 
                         <p className="md:text-[48px] text-[38px] font-bold text-left">Build RESTful API in record time</p>
                         <p className="text-start max-w-[392px]">
-                            Focus on your product, not on reinventing API business logics. APIHaven is designed to be accessible, customizable, and work seamlessly with  your frontend.
+                            Focus on your frontend, not on reinventing API business logics. APIHaven is designed to be accessible, customizable, and work seamlessly with  your frontend.
                         </p>
                         <img className="block md:hidden w-[480px]" src="/assets/code.png" alt="code snippet" />
 
