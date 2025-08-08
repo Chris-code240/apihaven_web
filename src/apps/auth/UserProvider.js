@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { UserContext } from "./UserContext";
-import {apihavenClient as apiClient} from "./axios";
+import apihavenClient from "./axios" ;
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
@@ -29,7 +29,7 @@ export const UserProvider = ({ children }) => {
 
   // Axios interceptors
   useEffect(() => {
-    const requestInterceptor = apiClient.interceptors.request.use(
+    const requestInterceptor = apihavenClient.interceptors.request.use(
       (config) => {
         const accessToken = user.token.access;
         if (accessToken) {
@@ -41,7 +41,7 @@ export const UserProvider = ({ children }) => {
       (error) => Promise.reject(error)
     );
 
-    const responseInterceptor = apiClient.interceptors.response.use(
+    const responseInterceptor = apihavenClient.interceptors.response.use(
       (response) => response,
       async (error) => {
         const originalRequest = error.config;
@@ -55,7 +55,7 @@ export const UserProvider = ({ children }) => {
           originalRequest._retry = true;
 
           try {
-            const res = await apiClient.post("/api/token/refresh/", {
+            const res = await apihavenClient.post("/api/token/refresh/", {
               refresh: user.token.refresh,
             });
 
@@ -80,7 +80,7 @@ export const UserProvider = ({ children }) => {
 
             // Retry the original request with new token
             originalRequest.headers.Authorization = `Bearer ${newAccess}`;
-            return apiClient(originalRequest);
+            return apihavenClient(originalRequest);
           } catch (refreshError) {
             // Refresh token invalid or expired — log out user
             logoutUser();
@@ -93,10 +93,10 @@ export const UserProvider = ({ children }) => {
     );
 
     return () => {
-      apiClient.interceptors.request.eject(requestInterceptor);
-      apiClient.interceptors.response.eject(responseInterceptor);
+      apihavenClient.interceptors.request.eject(requestInterceptor);
+      apihavenClient.interceptors.response.eject(responseInterceptor);
     };
-  }, [user.token.access, user.token.refresh]);
+  }, [user, user.token.access, user.token.refresh]);
 
   // Login / Logout helpers
   const loginUser = ({ access, refresh, email, username }) => {
@@ -125,3 +125,4 @@ export const UserProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
+
