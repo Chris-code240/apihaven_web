@@ -4,7 +4,7 @@ import NavLink from "./NavLink"
 function NavBar(){
 
     return (
-        <header>
+        <header className="bg-[#D9D9D9] bg-opacity-[10%]">
             <div className="container mx-auto px-6 md:px-0">
                 <div className="flex justify-between py-1 h-[65px]">
                     <AppLogo />

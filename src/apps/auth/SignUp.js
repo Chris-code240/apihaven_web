@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../auth/UserContext";
 import apihavenCLient from "./axios";
 
-export default function LoginPage() {
+export default function SignUpPage() {
   const { user, loginUser } = useContext(UserContext);
   const [userCredentials, setUserCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const resdata = await apihavenCLient.post("/app/token", {
-        username: userCredentials?.email || userCredentials?.username,
+      const resdata = await apihavenCLient.post("/app/signup", {
+        email: userCredentials.email,
         password: userCredentials.password,
       });
 
@@ -32,8 +32,8 @@ export default function LoginPage() {
         loginUser({
           access: resdata.data.access,
           refresh: resdata.data.refresh,
-          email: userCredentials?.email,
-          username: resdata.data?.username || "", // optional
+          email: userCredentials.email,
+          username: resdata.data.username || "", // optional
         });
 
         navigate("/dashboard");
@@ -44,6 +44,9 @@ export default function LoginPage() {
       alert(String(error));
     }
   };
+
+
+
     return (
         <article className="flex items-center h-screen">
             <div className="hidden md:block w-[50%]">
@@ -64,9 +67,11 @@ export default function LoginPage() {
             <div className="w-[100%] md:w-[50%] h-full bg-[#181818]">
                 <div className="md:w-[50%] w-[90%] mx-auto space-y-12">
                 <div>
-                  
+                    <p className="text-[22px] text-white opacity-[60%]">
+                    Create Your Free Account  
+                    </p>
                     <p className="text-[18px] text-[#d9d9d9] opacity-[50%]">
-                        Continue with:
+                        Connect with:
                     </p>
                 </div>
                 <div className="w-full space-y-1.5">
@@ -84,7 +89,6 @@ export default function LoginPage() {
                         Or Continue with Email
                     </div>
                 </div>
-
                 <form onSubmit={handleSubmit} className="text-gray-300 w-full space-y-1.5">
                     <input
                     type="email"
@@ -109,8 +113,8 @@ export default function LoginPage() {
                     Continue
                     </button>
                 </form>
-                <div className="text-white flex items-center space-x-1">
-                    Don't have account? <Link to='/signup' ><p className="text-blue-600 active:text-blue-500 visited:text-blue-500">Signup</p></Link>
+                <div className="text-white flex items-center">
+                    Already have account? <Link to='/login'> <p href="#" className="text-blue-600 active:text-blue-500 visited:text-blue-500">Login</p></Link>
                 </div>
                 </div>
             </div>
