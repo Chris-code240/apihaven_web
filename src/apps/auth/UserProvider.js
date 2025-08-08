@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { UserContext } from "./UserContext";
-import apihavenClient from "./axios";
+import {apihavenClient as apiClient} from "./axios";
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
     currentProject: "",
   });
 
-  const apiClient = apihavenClient;
+  
 
   // Hydrate user state from localStorage
   useEffect(() => {

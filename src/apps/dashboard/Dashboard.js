@@ -4,7 +4,6 @@ import Aside from "./Aside";
 import OverviewCard from "./components/OverviewCard";
 import Table from "./components/Table"
 export default function Dashboard() {
-  const { user } = useContext(UserContext);
 
   return (
     <main className="bg-[#D9D9D9] bg-opacity-[10%]  w-screen h-screen">

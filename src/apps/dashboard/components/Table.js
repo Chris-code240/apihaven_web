@@ -20,7 +20,7 @@ export default function Table({data={"Name":['apihaven','scrapp'], "Created at":
                 {headerNames.map((name, index)=>(<li key={`${Date.now()}${index}`} className={`w-1/${headerNames.length}  text-center font-medium`}>{name}</li>))}
             </ul>
             <ul >
-                {rows.map((row, index)=>(<li key={`${Date.now()}${index}`} className={`py-1 w-full cursor-pointer text-[13px] hover:text-[#000000] hover:bg-[#f1f1f1] text-[#0000080] flex items-center justify-between text-center font-thin ${index == rows.length -1 ? '' : 'border border-b-[#D9D9D9]'}`}>{
+                {rows.map((row, index)=>(<li key={`${Date.now()}${index}`} className={`py-1 w-full cursor-pointer text-[13px] hover:text-[#000000] hover:bg-[#f1f1f1] text-[#0000080] flex items-center justify-between text-center font-thin ${index === rows.length -1 ? '' : 'border border-b-[#D9D9D9]'}`}>{
                     row.map((value, ind)=>(<div key={`${Date.now()}${ind}`} className={`w-1/${headerNames.length}`}>{value}</div>))
                 }</li>))}
             </ul>
