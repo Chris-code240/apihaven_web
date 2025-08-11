@@ -1,24 +1,12 @@
 import Aside from "./Aside";
-import OverviewCard from "./components/OverviewCard";
-import Table from "./components/Table"
+import { Outlet } from "react-router-dom";
 export default function Dashboard() {
 
   return (
     <main className="bg-[#D9D9D9] bg-opacity-[10%]  w-screen h-screen">
         <div className="container mx-auto flex items-center w-full h-full">
             <Aside />
-            <div className="bg-white  w-full h-full px-6 pt-4 space-y-6">
-              <h2 className="text-[22px] font-medium">Your Projects</h2>
-              <div className="md:border md:p-2 md:rounded-md border-[#D9D9D9] space-y-3 md:space-y-6">
-                <p className="text-[18px] font-medium">Overview</p>
-                <div className="flex items-center md:flex-row flex-col md:space-x-6 space-x-0 space-y-6 md:space-y-0">
-                  <OverviewCard title={"Total Requests"} value={"26.31M"} trend={{"_value":"156.32%",positive:true}} date={"1 May, 2025"} />
-                  <OverviewCard title={"Total Projects"} value={"2"} date={"1 May, 2025"} />
-                </div>
-              </div>
-                <Table />
-
-            </div>
+            <Outlet />
         </div>
 
     </main>
