@@ -1,13 +1,9 @@
 import FieldTag from "../FieldTag";
 
-export default function SchemasDefinition({data=[{"name": "name", "type": "string", "target_schema": null, "primary_key": false, "null": true, "blank": false, "unique": false, "default": null, "deprecated": false, "visible": true, "editable": true, "target_field": null, "target_field_type": null}]}){
+export default function SchemasDefinition({data=[{"name": "ame", "type": "one_to_one", "target_schema": null, "primary_key": false, "null": true, "blank": false, "unique": false, "default": null, "deprecated": false, "visible": true, "editable": true, "target_field": null, "target_field_type": null}]}){
 
     const headerNames = ["Field", "Type", "Properties"]
     let rows = []
-    let d = Object.entries(data[0]).filter(([_, v]) => typeof v === "boolean")
-    d.forEach((e,i)=>{
-        console.log(e[1])
-    })
     for (let i = 0; i< data.length;i++){
         let field = data[i]
         let properties = Object.entries(field).filter(([_, v]) => typeof v === "boolean")
@@ -15,15 +11,15 @@ export default function SchemasDefinition({data=[{"name": "name", "type": "strin
         let temp = {"Field":field.name, "Type":field.type, "Properties": properties}
 
         if (field.type === "one_to_one"){
-            temp.Properties[`o2o:${field.target_schema}`] = true
+            temp.Properties.push([`o2o:${field.target_schema}`,true])
         }
         if (field.type === "foreign_key"){
-             temp.Properties[`fk:${field.target_schema}`] = true
+             temp.Properties.push([`fk:${field.target_schema}`, true])
 
 
         }
         if (field.type === "many_to_many"){
-            temp.Properties[`m2m:${field.target_schema}`] = true
+            temp.Properties.push([`m2m:${field.target_schema}`,true])
 
         }
         rows.push(temp)
@@ -47,8 +43,8 @@ export default function SchemasDefinition({data=[{"name": "name", "type": "strin
                     key={`${Date.now()}${ind}`}
                     className={`w-1/3`}
                 >
-                    {key === "Properties" && (<div className="flex items-center justify-between flex-wrap">{
-                        row[key].map((property, i)=><FieldTag tag_name={property[0]} is_false={property[1]} />)
+                    {key === "Properties" && (<div className="flex items-center space-x-1 flex-wrap">{
+                        row[key].map((property, i)=><FieldTag tag_name={property[0]} is_false={!property[1]} />)
                     }</div>)}
                     {key !== "Properties" && row[key]}
                 </div>

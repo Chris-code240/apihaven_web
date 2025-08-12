@@ -1,10 +1,12 @@
 import SchemasDefinition from "./SchemaDefinition";
+import { useParams } from "react-router-dom";
 
 export default function SchemaOverview(){
 
     return (
-        <div>
-            <SchemasDefinition data={[{"name": "name", "type": "string", "target_schema": null, "primary_key": false, "null": true, "blank": false, "unique": false, "default": null, "deprecated": false, "visible": true, "editable": true, "target_field": null, "target_field_type": null}]} />
+            <div className="md:border md:p-2 md:rounded-md border-[#D9D9D9] space-y-3 md:space-y-6">
+              <h2 className="text-[22px] font-medium flex items-center space-x-1">{useParams().schemaname} Definition</h2>
+            <SchemasDefinition />
         </div>
     )
 }

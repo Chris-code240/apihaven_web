@@ -2,7 +2,7 @@ import './App.css';
 import LandingPageMain from './apps/landing page/LandingPageMain';
 import LoginPage from "./apps/auth/LoginPage"
 import SignUpPage from './apps/auth/SignUp';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import MainLayout from './MainLayout';
 import Dashboard from './apps/dashboard/Dashboard';
 import ProtectedRoute from './apps/auth/ProtectedRoute';
@@ -27,11 +27,13 @@ function App() {
               </ProtectedRoute>
             }
           >
+            <Route index element={<Navigate to="projects" replace />} />
+            <Route path="projects" element={<OverviewMain />} />
             <Route path="overview" element={<OverviewMain/>} />
-            <Route path="projects" element={<OverviewMain/>} />
-            <Route path="projects/:projectname" element={<ProjectOverview />} >
-              <Route path=':schemaname' element={<SchemaOverview />} />
+            <Route path="projects/:projectname" element={<ProjectOverview />}>
+              <Route path=":schemaname" element={<SchemaOverview />} />
             </Route>
+
             
             
           </Route>

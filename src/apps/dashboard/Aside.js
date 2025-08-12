@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function Aside(){
 
     return (
-        <aside className="hidden md:block text-start w-[10%] h-screen">
+        <aside className="hidden md:block text-start w-[10%] h-screen fixed top-14">
             <ul className=" pt-6 space-y-6">
                 <Link to={"projects"} >
                     <AsideLink text={"Projects"} icon={"fidget.svg"} />

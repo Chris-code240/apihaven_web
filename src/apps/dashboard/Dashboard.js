@@ -6,7 +6,9 @@ export default function Dashboard() {
     <main className="bg-[#D9D9D9] bg-opacity-[10%]  w-screen h-screen">
         <div className="container mx-auto flex items-center w-full h-full">
             <Aside />
-            <Outlet />
+            <div className="w-full h-full md:ml-[10%]">
+              <Outlet />
+            </div>
         </div>
 
     </main>
